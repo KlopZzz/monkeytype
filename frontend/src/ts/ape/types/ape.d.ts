@@ -136,6 +136,10 @@ declare namespace Ape {
         uid?: string;
       }) => EndpointData;
       unlinkDiscord: Endpoint;
+      getDiscordAvatar: (
+        tokenType: string,
+        accessToken: string
+      ) => EndpointData;
       addQuoteToFavorites: (language: string, quoteId: string) => EndpointData;
       removeQuoteFromFavorites: (
         language: string,

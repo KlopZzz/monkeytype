@@ -132,6 +132,15 @@ export default function getUsersEndpoints(
     });
   }
 
+  async function getDiscordAvatar(
+    tokenType: string,
+    accessToken: string
+  ): Ape.EndpointData {
+    return await apeClient.get(`${BASE_PATH}/discord/avatar`, {
+      payload: { tokenType, accessToken },
+    });
+  }
+
   async function unlinkDiscord(): Ape.EndpointData {
     return await apeClient.post(`${BASE_PATH}/discord/unlink`);
   }
@@ -168,6 +177,7 @@ export default function getUsersEndpoints(
     deleteTagPersonalBest,
     linkDiscord,
     unlinkDiscord,
+    getDiscordAvatar,
     getCustomThemes,
     addCustomTheme,
     editCustomTheme,
